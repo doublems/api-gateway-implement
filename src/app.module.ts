@@ -2,10 +2,10 @@ import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LeakyBucketMiddleware } from './leaky-bucket/leaky-bucket.middleware';
-import { EventEmitterModule } from '@nestjs/event-emitter';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
-  imports: [EventEmitterModule.forRoot()],
+  imports: [ScheduleModule.forRoot()],
   controllers: [AppController],
   providers: [AppService],
 })
