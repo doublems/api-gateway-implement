@@ -10,7 +10,7 @@ import { NextFunction, request } from 'express';
 export class LeakyBucketMiddleware implements NestMiddleware {
   static readonly requestQueue = [];
   static readonly rate = { size: 2, interval: 5000 };
-  readonly capacity = 100;
+  readonly capacity = 1;
   private readonly logger = new Logger(LeakyBucketMiddleware.name);
 
   public readonly isFullBucket = () =>
